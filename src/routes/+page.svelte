@@ -62,28 +62,27 @@
 		},
 	];
 	let animationPlayState = "running";
-	// function pauseAnimation() {
-
-	// }
-	// function playAnimation() {
-
-	// }
 	function handleImgMouseover(i) {
-		covers[i].captionShowing = true;
-		console.log("show label");
-		animationPlayState = "paused";
+		if (window.matchMedia("(min-width: 501px)").matches) {
+			console.log(window.matchMedia("(min-width: 501px)"));
+			console.log("matched!");
+			covers[i].captionShowing = true;
+			animationPlayState = "paused";
+		} else return;
 	}
 	function handleImgMouseleave(i) {
-		covers[i].captionShowing = false;
-		console.log("hide label");
-		animationPlayState = "running";
+		if (window.matchMedia("(min-width: 501px)").matches) {
+			covers[i].captionShowing = false;
+			animationPlayState = "running";
+		}
 	}
 	let mx = "0px";
 	let my = "0px";
 	function handleMousemove(event) {
-		mx = `${event.clientX}px`;
-		my = `${event.clientY - 10}px`;
-		console.log(mx, my);
+		if (window.matchMedia("(min-width: 501px)").matches) {
+			mx = `${event.clientX}px`;
+			my = `${event.clientY - 10}px`;
+		}
 	}
 </script>
 
