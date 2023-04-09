@@ -64,8 +64,6 @@
 	let animationPlayState = "running";
 	function handleImgMouseover(i) {
 		if (window.matchMedia("(min-width: 501px)").matches) {
-			console.log(window.matchMedia("(min-width: 501px)"));
-			console.log("matched!");
 			covers[i].captionShowing = true;
 			animationPlayState = "paused";
 		} else return;
