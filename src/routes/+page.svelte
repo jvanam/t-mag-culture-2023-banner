@@ -68,12 +68,12 @@
 	// function playAnimation() {
 
 	// }
-	function showLabel(i) {
+	function handleImgMouseover(i) {
 		covers[i].captionShowing = true;
 		console.log("show label");
 		animationPlayState = "paused";
 	}
-	function hideLabel(i) {
+	function handleImgMouseleave(i) {
 		covers[i].captionShowing = false;
 		console.log("hide label");
 		animationPlayState = "running";
@@ -110,10 +110,10 @@
 				<a href={cover.articleLink}>
 					<div
 						class="cover-wrapper"
-						on:mouseover={() => showLabel(i)}
-						on:focus={() => showLabel(i)}
-						on:blur={() => hideLabel(i)}
-						on:mouseleave={() => hideLabel(i)}
+						on:mouseover={() => handleImgMouseover(i)}
+						on:focus={() => handleImgMouseover(i)}
+						on:blur={() => handleImgMouseleave(i)}
+						on:mouseleave={() => handleImgMouseleave(i)}
 						on:mousemove={handleMousemove}
 					>
 						<div
@@ -137,10 +137,10 @@
 				<a href={cover.articleLink}>
 					<div
 						class="cover-wrapper"
-						on:mouseover={() => showLabel(i)}
-						on:focus={() => showLabel(i)}
-						on:blur={() => hideLabel(i)}
-						on:mouseleave={() => hideLabel(i)}
+						on:mouseover={() => handleImgMouseover(i)}
+						on:focus={() => handleImgMouseover(i)}
+						on:blur={() => handleImgMouseleave(i)}
+						on:mouseleave={() => handleImgMouseleave(i)}
 						on:mousemove={handleMousemove}
 					>
 						<div
@@ -164,6 +164,131 @@
 </section>
 
 <style>
+	/* SMALL / MOBILE */
+	@media only screen and (max-width: 500px) {
+		.title {
+			width: 100%;
+		}
+		.t-mag-logo {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			width: 90px;
+			height: auto;
+		}
+		.wrapper {
+			padding: 10px;
+			padding-bottom: 0px;
+			padding-top: 130px;
+		}
+		.dek {
+			font-size: 5vw;
+			margin-bottom: 20px;
+		}
+		.link {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+		.images-wrapper-1 img,
+		.images-wrapper-2 img {
+			width: calc(100vw / 2);
+			height: auto;
+			cursor: pointer;
+		}
+		.scroll-images-wrapper {
+			height: calc((100vw / 2) * 3450 / 2850);
+		}
+		.images-wrapper-1 {
+			animation: primary-mobile 20s linear infinite;
+		}
+		.images-wrapper-2 {
+			animation: secondary-mobile 20s linear infinite;
+		}
+	}
+	/* MEDIUM / TABLET */
+	@media only screen and (min-width: 501px) and (max-width: 850px) {
+		.title {
+			width: 100%;
+			max-width: 500px;
+			display: flex;
+			justify-content: center;
+		}
+		.t-mag-logo {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			width: 90px;
+			height: auto;
+		}
+		.wrapper {
+			padding: 10px;
+			padding-bottom: 0px;
+			padding-top: 100px;
+		}
+		.dek {
+			font-size: 22px;
+			margin-bottom: 20px;
+		}
+		.link {
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+		.images-wrapper-1 img,
+		.images-wrapper-2 img {
+			width: calc(100vw / 3);
+			height: auto;
+			cursor: pointer;
+		}
+		.scroll-images-wrapper {
+			height: calc((100vw / 3) * 3450 / 2850);
+		}
+		.images-wrapper-1 {
+			animation: primary-tablet 20s linear infinite;
+		}
+		.images-wrapper-2 {
+			animation: secondary-tablet 20s linear infinite;
+		}
+	}
+	/* LARGE / DESKTOP */
+	@media only screen and (min-width: 851px) {
+		.title {
+			width: 600px;
+		}
+		.t-mag-logo {
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			width: 100px;
+			height: auto;
+		}
+		.wrapper {
+			padding: 15px;
+		}
+		.dek {
+			font-size: 24px;
+			margin-bottom: 50px;
+		}
+		.link {
+			margin-top: 30px;
+			margin-bottom: 15px;
+		}
+		.images-wrapper-1 img,
+		.images-wrapper-2 img {
+			width: calc(100vw / 6);
+			height: auto;
+			cursor: pointer;
+		}
+		.scroll-images-wrapper {
+			height: calc((100vw / 6) * 3450 / 2850);
+		}
+		.images-wrapper-1 {
+			animation: primary-desktop 14s linear infinite;
+		}
+		.images-wrapper-2 {
+			animation: secondary-desktop 14s linear infinite;
+		}
+	}
+	/* ALL SCREEN SIZES */
 	a {
 		text-decoration: none;
 		color: inherit;
@@ -173,39 +298,30 @@
 		position: relative;
 		flex-direction: column;
 		align-items: center;
-		padding: 30px;
 		border-top: 1px solid black;
 		border-bottom: 1px solid black;
 		background-color: #eeeeee;
 	}
-	.title {
-		width: 600px;
+	.t-mag-logo img {
+		width: 100%;
+		height: auto;
 	}
 	.title img {
 		width: 100%;
 		height: auto;
 	}
-	.t-mag-logo {
-		position: absolute;
-		top: 30px;
-		left: 30px;
-	}
 	.dek {
 		text-align: center;
 		font-family: "FactCondensedMedium";
-		font-size: 24px;
-		margin-bottom: 50px;
 	}
 	.link {
 		font-family: "KipBold";
-		margin-top: 30px;
 	}
 	.images-wrapper-1 {
 		display: flex;
 		position: absolute;
 		left: 0%;
 		top: 0%;
-		animation: primary 14s linear infinite;
 		animation-play-state: var(--animation-play-state);
 	}
 	.images-wrapper-2 {
@@ -213,19 +329,11 @@
 		position: absolute;
 		left: 0%;
 		top: 0%;
-		animation: secondary 14s linear infinite;
 		animation-play-state: var(--animation-play-state);
-	}
-	.images-wrapper-1 img,
-	.images-wrapper-2 img {
-		width: calc(100vw / 6);
-		height: auto;
-		cursor: pointer;
 	}
 	.scroll-images-wrapper {
 		position: relative;
 		width: 100vw;
-		height: calc((100vw / 6) * 3450 / 2850);
 		overflow-x: hidden;
 	}
 	/* .cover-wrapper {
@@ -259,7 +367,7 @@
 		font-family: "KipCondensedRegular";
 		font-size: 12px;
 	}
-	@keyframes primary {
+	@keyframes primary-desktop {
 		from {
 			left: 0%;
 		}
@@ -267,9 +375,41 @@
 			left: -100%;
 		}
 	}
-	@keyframes secondary {
+	@keyframes secondary-desktop {
 		from {
 			left: 100%;
+		}
+		to {
+			left: 0%;
+		}
+	}
+	@keyframes primary-tablet {
+		from {
+			left: 0%;
+		}
+		to {
+			left: -200%;
+		}
+	}
+	@keyframes secondary-tablet {
+		from {
+			left: 200%;
+		}
+		to {
+			left: 0%;
+		}
+	}
+	@keyframes primary-mobile {
+		from {
+			left: 0%;
+		}
+		to {
+			left: -300%;
+		}
+	}
+	@keyframes secondary-mobile {
+		from {
+			left: 300%;
 		}
 		to {
 			left: 0%;
