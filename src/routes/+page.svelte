@@ -416,7 +416,7 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
-	body {
+	:global(body) {
 		padding: 0px !important;
 		margin: 0px !important;
 	}
