@@ -91,9 +91,13 @@
 	class="wrapper"
 	style="--animation-play-state: {animationPlayState}; --cursor-x: {mx}; --cursor-y: {my}"
 >
-	<div class="t-mag-logo"><img src="t-logo.svg" /></div>
+	<a href="https://www.nytimes.com/section/t-magazine">
+		<div class="t-mag-logo"><img src="t-logo.svg" /></div>
+	</a>
 	<div class="header">
-		<div class="title"><img src="handwriting.svg" /></div>
+		<a href="https://www.nytimes.com/section/t-magazine">
+			<div class="title"><img src="handwriting.svg" /></div>
+		</a>
 		<div class="dek">
 			40 legendary female artists—<br />and the younger women who remind them of
 			<br />why they make art.
@@ -103,56 +107,60 @@
 	<div class="scroll-images-wrapper">
 		<div class="images-wrapper-1">
 			{#each covers as cover, i}
-				<div
-					class="cover-wrapper"
-					on:mouseover={() => showLabel(i)}
-					on:focus={() => showLabel(i)}
-					on:blur={() => hideLabel(i)}
-					on:mouseleave={() => hideLabel(i)}
-					on:mousemove={handleMousemove}
-				>
+				<a href={cover.articleLink}>
 					<div
-						class="label"
-						style={cover.captionShowing ? `display: block` : `display: none`}
+						class="cover-wrapper"
+						on:mouseover={() => showLabel(i)}
+						on:focus={() => showLabel(i)}
+						on:blur={() => hideLabel(i)}
+						on:mouseleave={() => hideLabel(i)}
+						on:mousemove={handleMousemove}
 					>
-						<span class="legend-type">{`${cover.legend}, `}</span>
-						<span class="subtitle-type">{`${cover.legendOccupation}`}</span>
-						<br />
-						<span class="subtitle-type">and&nbsp;</span><span class="heir-type"
-							>{`${cover.heir}, `}</span
-						><span class="subtitle-type">{`${cover.heirOccupation}`}</span>
+						<div
+							class="label"
+							style={cover.captionShowing ? `display: block` : `display: none`}
+						>
+							<span class="legend-type">{`${cover.legend}, `}</span>
+							<span class="subtitle-type">{`${cover.legendOccupation}`}</span>
+							<br />
+							<span class="subtitle-type">and&nbsp;</span><span
+								class="heir-type">{`${cover.heir}, `}</span
+							><span class="subtitle-type">{`${cover.heirOccupation}`}</span>
+						</div>
+						<img src={cover.imgSrc} alt={cover.imgAlt} />
 					</div>
-					<img src={cover.imgSrc} alt={cover.imgAlt} />
-				</div>
+				</a>
 			{/each}
 		</div>
 		<div class="images-wrapper-2">
 			{#each covers as cover, i}
-				<div
-					class="cover-wrapper"
-					on:mouseover={() => showLabel(i)}
-					on:focus={() => showLabel(i)}
-					on:blur={() => hideLabel(i)}
-					on:mouseleave={() => hideLabel(i)}
-					on:mousemove={handleMousemove}
-				>
+				<a href={cover.articleLink}>
 					<div
-						class="label"
-						style={cover.captionShowing ? `display: block` : `display: none`}
+						class="cover-wrapper"
+						on:mouseover={() => showLabel(i)}
+						on:focus={() => showLabel(i)}
+						on:blur={() => hideLabel(i)}
+						on:mouseleave={() => hideLabel(i)}
+						on:mousemove={handleMousemove}
 					>
-						<span class="legend-type">{`${cover.legend}, `}</span>
-						<span class="subtitle-type">{`${cover.legendOccupation}`}</span>
-						<br />
-						<span class="subtitle-type">and&nbsp;</span><span class="heir-type"
-							>{`${cover.heir}, `}</span
-						><span class="subtitle-type">{`${cover.heirOccupation}`}</span>
+						<div
+							class="label"
+							style={cover.captionShowing ? `display: block` : `display: none`}
+						>
+							<span class="legend-type">{`${cover.legend}, `}</span>
+							<span class="subtitle-type">{`${cover.legendOccupation}`}</span>
+							<br />
+							<span class="subtitle-type">and&nbsp;</span><span
+								class="heir-type">{`${cover.heir}, `}</span
+							><span class="subtitle-type">{`${cover.heirOccupation}`}</span>
+						</div>
+						<img src={cover.imgSrc} alt={cover.imgAlt} />
 					</div>
-					<img src={cover.imgSrc} alt={cover.imgAlt} />
-				</div>
+				</a>
 			{/each}
 		</div>
 	</div>
-	<div class="link"><a href="www.google.com">READ THE ISSUE</a></div>
+	<div class="link"><a href="https://www.google.com">READ THE ISSUE</a></div>
 </section>
 
 <style>
@@ -217,7 +225,7 @@
 	.scroll-images-wrapper {
 		position: relative;
 		width: 100vw;
-		height: 20rem;
+		height: calc((100vw / 6) * 3450 / 2850);
 		overflow-x: hidden;
 	}
 	/* .cover-wrapper {
