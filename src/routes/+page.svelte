@@ -62,11 +62,13 @@
 		},
 	];
 	let animationPlayState = "running";
+	let mx = "0px";
+	let my = "0px";
 	function handleImgMouseover(i) {
 		if (window.matchMedia("(min-width: 501px)").matches) {
 			covers[i].captionShowing = true;
 			animationPlayState = "paused";
-		} else return;
+		}
 	}
 	function handleImgMouseleave(i) {
 		if (window.matchMedia("(min-width: 501px)").matches) {
@@ -74,8 +76,6 @@
 			animationPlayState = "running";
 		}
 	}
-	let mx = "0px";
-	let my = "0px";
 	function handleMousemove(event) {
 		if (window.matchMedia("(min-width: 501px)").matches) {
 			mx = `${event.clientX}px`;
@@ -89,7 +89,7 @@
 	style="--animation-play-state: {animationPlayState}; --cursor-x: {mx}; --cursor-y: {my}"
 >
 	<a href="https://www.nytimes.com/section/t-magazine">
-		<div class="t-mag-logo"><img src="t-logo.svg" /></div>
+		<img class="t-mag-logo" src="t-logo.svg" />
 	</a>
 	<div class="header">
 		<a href="https://www.nytimes.com/section/t-magazine">
@@ -157,7 +157,7 @@
 			{/each}
 		</div>
 	</div>
-	<div class="link"><a href="https://www.google.com">READ THE ISSUE</a></div>
+	<a href="https://www.google.com" class="link">READ THE ISSUE</a>
 </section>
 
 <style>
@@ -285,7 +285,15 @@
 			animation: secondary-desktop 14s linear infinite;
 		}
 	}
-	/* ALL SCREEN SIZES */
+	/* ALL SCREEN SIZES / GLOBAL */
+	* {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	:global(body) {
+		padding: 0px !important;
+		margin: 0px !important;
+	}
 	a {
 		text-decoration: none;
 		color: inherit;
@@ -299,17 +307,13 @@
 		border-bottom: 1px solid black;
 		background-color: #eeeeee;
 	}
-	.t-mag-logo img {
-		width: 100%;
-		height: auto;
-	}
 	.title img {
 		width: 100%;
 		height: auto;
 	}
 	.dek {
-		text-align: center;
 		font-family: "FactCondensedMedium";
+		text-align: center;
 	}
 	.link {
 		font-family: "KipBold";
@@ -333,26 +337,23 @@
 		width: 100vw;
 		overflow-x: hidden;
 	}
-	/* .cover-wrapper {
-		position: relative;
-	} */
 	.label {
-		white-space: nowrap;
-		background-color: white;
-		border: black 1px dotted;
+		position: fixed;
+		top: var(--cursor-y);
+		left: var(--cursor-x);
+		transform: translate(-50%, -100%);
+		z-index: 100;
 		padding-top: 8px;
 		padding-bottom: 5px;
 		padding-left: 10px;
 		padding-right: 10px;
+		background-color: white;
+		border: black 1px dotted;
 		font-size: 16px;
 		line-height: 1;
 		text-align: center;
 		text-transform: uppercase;
-		position: fixed;
-		transform: translate(-50%, -100%);
-		top: var(--cursor-y);
-		left: var(--cursor-x);
-		z-index: 100;
+		white-space: nowrap;
 	}
 	.legend-type {
 		font-family: "KipCondensedBold";
@@ -411,14 +412,6 @@
 		to {
 			left: 0%;
 		}
-	}
-	* {
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
-	:global(body) {
-		padding: 0px !important;
-		margin: 0px !important;
 	}
 	@font-face {
 		font-family: "FactCondensedMedium";
