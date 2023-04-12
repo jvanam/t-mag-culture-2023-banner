@@ -7,7 +7,8 @@
 			heir: "Atsuko Okatsuka",
 			legendOccupation: "comedian and actress",
 			heirOccupation: "comedian",
-			articleLink: "https://www.nytimes.com/section/t-magazine",
+			articleLink:
+				"https://www.nytimes.com/2023/04/20/t-magazine/margaret-cho-atsuko-okatsuka.html",
 			captionShowing: false,
 		},
 		{
@@ -17,7 +18,8 @@
 			heir: "Elle Fanning",
 			legendOccupation: "actress",
 			heirOccupation: "actress",
-			articleLink: "https://www.nytimes.com/section/t-magazine",
+			articleLink:
+				"https://www.nytimes.com/2023/04/20/t-magazine/naomi-watts-elle-fanning.html",
 			captionShowing: false,
 		},
 		{
@@ -27,7 +29,8 @@
 			heir: "Klein",
 			legendOccupation: "multidisciplinary artist",
 			heirOccupation: "musician & filmmaker",
-			articleLink: "https://www.nytimes.com/section/t-magazine",
+			articleLink:
+				"https://www.nytimes.com/2023/04/20/t-magazine/wu-tsang-klein.html",
 			captionShowing: false,
 		},
 		{
@@ -37,7 +40,8 @@
 			heir: "Issa Rae",
 			legendOccupation: "musicians",
 			heirOccupation: "actress, producer, and screenwriter",
-			articleLink: "https://www.nytimes.com/section/t-magazine",
+			articleLink:
+				"https://www.nytimes.com/2023/04/20/t-magazine/salt-n-pepa-issa-rae.html",
 			captionShowing: false,
 		},
 		{
@@ -47,7 +51,8 @@
 			heir: "Zadie Xa",
 			legendOccupation: "fasion designer",
 			heirOccupation: "interdisciplinary artist",
-			articleLink: "https://www.nytimes.com/section/t-magazine",
+			articleLink:
+				"https://www.nytimes.com/2023/04/20/t-magazine/maria-grazia-chiuri-zadie-xa.html",
 			captionShowing: false,
 		},
 		{
@@ -57,7 +62,8 @@
 			heir: "Lana Del Rey",
 			legendOccupation: "singer-songwriter & visual artist",
 			heirOccupation: "singer-songwriter",
-			articleLink: "https://www.nytimes.com/section/t-magazine",
+			articleLink:
+				"https://www.nytimes.com/2023/04/20/t-magazine/lana-del-rey-joan-baez.html",
 			captionShowing: false,
 		},
 	];
@@ -161,7 +167,7 @@
 </section>
 
 <style>
-	/* SMALL / MOBILE */
+	/* SMALL  */
 	@media only screen and (max-width: 500px) {
 		.title {
 			width: 100%;
@@ -186,9 +192,6 @@
 			margin-top: 15px;
 			margin-bottom: 15px;
 		}
-		.link:hover {
-			text-decoration: underline !important;
-		}
 		.images-wrapper-1 img,
 		.images-wrapper-2 img {
 			width: calc(100vw / 2);
@@ -205,7 +208,7 @@
 			animation: secondary-mobile 20s linear infinite;
 		}
 	}
-	/* MEDIUM / TABLET */
+	/* MEDIUM */
 	@media only screen and (min-width: 501px) and (max-width: 850px) {
 		.title {
 			width: 100%;
@@ -249,7 +252,7 @@
 			animation: secondary-tablet 20s linear infinite;
 		}
 	}
-	/* LARGE / DESKTOP */
+	/* LARGE */
 	@media only screen and (min-width: 851px) {
 		.title {
 			width: 600px;
@@ -288,7 +291,7 @@
 			animation: secondary-desktop 14s linear infinite;
 		}
 	}
-	/* ALL SCREEN SIZES / GLOBAL */
+	/* GLOBAL */
 	* {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
@@ -309,7 +312,12 @@
 		border-top: 1px solid black;
 		border-bottom: 1px solid black;
 		/* background-color: #eeeeee; */
-		background: linear-gradient(0deg, #dd5434 0%, #e19f4e 21.18%, #ffe64c 100%);
+		background: linear-gradient(
+			180deg,
+			#dd5434 0%,
+			#e19f4e 21.18%,
+			#ffe64c 100%
+		);
 	}
 	.title img {
 		width: 100%;
@@ -352,7 +360,7 @@
 		padding-left: 10px;
 		padding-right: 10px;
 		background-color: white;
-		border: black 1px dotted;
+		border: black 1px dashed;
 		font-size: 16px;
 		line-height: 1;
 		text-align: center;
@@ -368,6 +376,9 @@
 	.subtitle-type {
 		font-family: "KipCondensedRegular";
 		font-size: 12px;
+	}
+	.link:hover {
+		text-decoration: underline !important;
 	}
 	@keyframes primary-desktop {
 		from {
