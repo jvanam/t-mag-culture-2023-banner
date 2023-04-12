@@ -186,6 +186,9 @@
 			margin-top: 15px;
 			margin-bottom: 15px;
 		}
+		.link:hover {
+			text-decoration: underline !important;
+		}
 		.images-wrapper-1 img,
 		.images-wrapper-2 img {
 			width: calc(100vw / 2);
@@ -305,7 +308,8 @@
 		align-items: center;
 		border-top: 1px solid black;
 		border-bottom: 1px solid black;
-		background-color: #eeeeee;
+		/* background-color: #eeeeee; */
+		background: linear-gradient(0deg, #dd5434 0%, #e19f4e 21.18%, #ffe64c 100%);
 	}
 	.title img {
 		width: 100%;
