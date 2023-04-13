@@ -95,11 +95,16 @@
 	style="--animation-play-state: {animationPlayState}; --cursor-x: {mx}; --cursor-y: {my}"
 >
 	<a href="https://www.nytimes.com/section/t-magazine">
-		<img class="t-mag-logo" src="t-logo.svg" />
+		<img alt="T Magazine logo" class="t-mag-logo" src="t-logo.svg" />
 	</a>
 	<div class="header">
 		<a href="https://www.nytimes.com/section/t-magazine">
-			<div class="title"><img src="handwriting.svg" /></div>
+			<div class="title">
+				<img
+					alt="handwritten logo for this issue of T Magazine - reads 'A Woman's Work'"
+					src="handwriting.svg"
+				/>
+			</div>
 		</a>
 		<div class="dek">
 			40 legendary female artists—<br />and the younger women who remind them of
