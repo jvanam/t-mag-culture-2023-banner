@@ -107,7 +107,52 @@
 		</div>
 	</div>
 
-	<div class="scroll-images-wrapper">
+	<!-- Separate mobile + desktop carousels because of link + hover interaction discrepancy -->
+
+	<!-- MOBILE IMAGE CAROUSEL -->
+	<div class="scroll-images-wrapper mobile">
+		<a href="https://www.nytimes.com/section/t-magazine">
+			<div class="images-wrapper-1">
+				{#each covers as cover, i}
+					<div class="cover-wrapper">
+						<div
+							class="label"
+							style={cover.captionShowing ? `display: block` : `display: none`}
+						>
+							<span class="legend-type">{`${cover.legend}, `}</span>
+							<span class="subtitle-type">{`${cover.legendOccupation}`}</span>
+							<br />
+							<span class="subtitle-type">and&nbsp;</span><span
+								class="heir-type">{`${cover.heir}, `}</span
+							><span class="subtitle-type">{`${cover.heirOccupation}`}</span>
+						</div>
+						<img src={cover.imgSrc} alt={cover.imgAlt} />
+					</div>
+				{/each}
+			</div>
+			<div class="images-wrapper-2">
+				{#each covers as cover, i}
+					<div class="cover-wrapper">
+						<div
+							class="label"
+							style={cover.captionShowing ? `display: block` : `display: none`}
+						>
+							<span class="legend-type">{`${cover.legend}, `}</span>
+							<span class="subtitle-type">{`${cover.legendOccupation}`}</span>
+							<br />
+							<span class="subtitle-type">and&nbsp;</span><span
+								class="heir-type">{`${cover.heir}, `}</span
+							><span class="subtitle-type">{`${cover.heirOccupation}`}</span>
+						</div>
+						<img src={cover.imgSrc} alt={cover.imgAlt} />
+					</div>
+				{/each}
+			</div>
+		</a>
+	</div>
+
+	<!-- DESKTOP IMAGE CAROUSEL -->
+	<div class="scroll-images-wrapper desktop">
 		<div class="images-wrapper-1">
 			{#each covers as cover, i}
 				<a href={cover.articleLink}>
@@ -163,12 +208,16 @@
 			{/each}
 		</div>
 	</div>
+	<!-- DANNY - can you add the link to the interactive here? -->
 	<a href="https://www.google.com" class="link">READ THE ISSUE</a>
 </section>
 
 <style>
 	/* SMALL  */
 	@media only screen and (max-width: 500px) {
+		.scroll-images-wrapper.desktop {
+			display: none;
+		}
 		.title {
 			width: 100%;
 		}
@@ -210,6 +259,9 @@
 	}
 	/* MEDIUM */
 	@media only screen and (min-width: 501px) and (max-width: 850px) {
+		.scroll-images-wrapper.mobile {
+			display: none;
+		}
 		.title {
 			width: 100%;
 			max-width: 500px;
@@ -254,6 +306,9 @@
 	}
 	/* LARGE */
 	@media only screen and (min-width: 851px) {
+		.scroll-images-wrapper.mobile {
+			display: none;
+		}
 		.title {
 			width: 600px;
 		}
@@ -311,7 +366,6 @@
 		align-items: center;
 		border-top: 1px solid black;
 		border-bottom: 1px solid black;
-		/* background-color: #eeeeee; */
 		background: linear-gradient(
 			180deg,
 			#dd5434 0%,
