@@ -98,7 +98,9 @@
 		<img alt="T Magazine logo" class="t-mag-logo" src="t-logo.svg" />
 	</a>
 	<div class="header">
-		<a href="https://www.nytimes.com/section/t-magazine">
+		<a
+			href="https://www.nytimes.com/interactive/2023/04/20/t-magazine/women-artists-culture-mentors"
+		>
 			<div class="title">
 				<img
 					alt="handwritten logo for this issue of T Magazine - reads 'A Woman's Work'"
@@ -116,7 +118,9 @@
 
 	<!-- MOBILE IMAGE CAROUSEL -->
 	<div class="scroll-images-wrapper mobile">
-		<a href="https://www.nytimes.com/section/t-magazine">
+		<a
+			href="https://www.nytimes.com/interactive/2023/04/20/t-magazine/women-artists-culture-mentors"
+		>
 			<div class="images-wrapper-1">
 				{#each covers as cover, i}
 					<div class="cover-wrapper">
