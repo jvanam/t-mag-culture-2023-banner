@@ -423,7 +423,7 @@
 		padding-left: 10px;
 		padding-right: 10px;
 		background-color: white;
-		border: black 1px dashed;
+		border: black 1px dotted;
 		font-size: 16px;
 		line-height: 1;
 		text-align: center;
